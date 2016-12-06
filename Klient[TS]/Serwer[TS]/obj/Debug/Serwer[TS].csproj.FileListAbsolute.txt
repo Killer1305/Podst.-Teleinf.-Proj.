@@ -1,0 +1,12 @@
+c:\users\kiler\documents\visual studio 2012\Projects\Serwer[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe.config
+c:\users\kiler\documents\visual studio 2012\Projects\Serwer[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe
+c:\users\kiler\documents\visual studio 2012\Projects\Serwer[TS]\Serwer[TS]\bin\Debug\Serwer[TS].pdb
+c:\users\kiler\documents\visual studio 2012\Projects\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].csprojResolveAssemblyReference.cache
+c:\users\kiler\documents\visual studio 2012\Projects\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer_TS_.Form1.resources
+c:\users\kiler\documents\visual studio 2012\Projects\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer_TS_.Properties.Resources.resources
+c:\users\kiler\documents\visual studio 2012\Projects\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].csproj.GenerateResource.Cache
+c:\users\kiler\documents\visual studio 2012\Projects\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].exe
+c:\users\kiler\documents\visual studio 2012\Projects\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].pdb
+C:\Users\Kiler\Documents\Visual Studio 2012\Projects\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe.config
+C:\Users\Kiler\Documents\Visual Studio 2012\Projects\Klient[TS]\Serwer[TS]\obj\Debug\Serwer[TS].exe
+C:\Users\Kiler\Documents\Visual Studio 2012\Projects\Klient[TS]\Serwer[TS]\obj\Debug\Serwer[TS].pdb
