@@ -66,8 +66,8 @@ namespace Serwer_TS_
             UstawTekst("Zatrzymano pracę serwera");
             //UstawStop(false);
             //UstawLogin(false);
-            //UstawPassword(false);
-            //UstawStart(true)
+           // UstawPassword(false);
+          //  UstawStart(true)
             polaczeniaAktywne = false;
         }
 
@@ -160,9 +160,15 @@ namespace Serwer_TS_
             {
                 while((wiadomosc=czytanie.ReadString())!="###BYE###")
                 {
-                    if (wiadomosc.Equals(loginKlienta) == true)
+
+                   
+
+
+                        if (wiadomosc.Equals(loginKlienta) == true)
                             login = true;
-                    if (wiadomosc.Equals(hasloKlienta) == true)
+
+
+                        if (wiadomosc.Equals(hasloKlienta) == true)
                             haslo = true;
                     
 
@@ -180,6 +186,7 @@ namespace Serwer_TS_
                         kod = "###0";
                         login = false;
                         haslo = false;
+
                     }
                     else
                     {
@@ -187,14 +194,20 @@ namespace Serwer_TS_
                         {
                             kod = "###2";
                             pisanie.Write(kod);
-                            pisanie.Write("###BYE###");
                             kod = "###0";
                         }
                     }
+                
+                    
+                    
+
+
                 }
                 klient.Close();
                 serwer.Stop();
                 UstawTekst("Połączenie zostało przerwane przez klienta");
+                
+
             }
             catch
             {

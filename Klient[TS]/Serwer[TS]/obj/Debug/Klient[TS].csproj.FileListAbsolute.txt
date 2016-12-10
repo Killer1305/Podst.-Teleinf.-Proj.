@@ -41,21 +41,15 @@ G:\Download\(dziala)7.Programowanie gniazdek_autoryzacja_klient\7.Programowanie 
 G:\Download\(dziala)7.Programowanie gniazdek_autoryzacja_klient\7.Programowanie gniazdek_autoryzacja_klient\Klient[TS]\Serwer[TS]\obj\Debug\Klient_TS_.Form1.resources
 G:\Download\(dziala)7.Programowanie gniazdek_autoryzacja_klient\7.Programowanie gniazdek_autoryzacja_klient\Klient[TS]\Serwer[TS]\obj\Debug\Klient_TS_.Properties.Resources.resources
 G:\Download\(dziala)7.Programowanie gniazdek_autoryzacja_klient\7.Programowanie gniazdek_autoryzacja_klient\Klient[TS]\Serwer[TS]\obj\Debug\Klient[TS].csproj.GenerateResource.Cache
-C:\Users\Kiler\SkyDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe.config
-C:\Users\Kiler\SkyDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Serwer[TS].exe
-C:\Users\Kiler\SkyDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Serwer[TS].pdb
-C:\Users\Kiler\SkyDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe
-C:\Users\Kiler\SkyDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].pdb
-C:\Users\Kiler\SkyDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Klient[TS].csprojResolveAssemblyReference.cache
-C:\Users\Kiler\SkyDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Klient_TS_.Form1.resources
-C:\Users\Kiler\SkyDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Klient_TS_.Properties.Resources.resources
-C:\Users\Kiler\SkyDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Klient[TS].csproj.GenerateResource.Cache
-C:\Users\mich1\OneDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe.config
-C:\Users\mich1\OneDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Serwer[TS].exe
-C:\Users\mich1\OneDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Serwer[TS].pdb
-C:\Users\mich1\OneDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe
-C:\Users\mich1\OneDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].pdb
-C:\Users\mich1\OneDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Klient[TS].csprojResolveAssemblyReference.cache
-C:\Users\mich1\OneDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Klient_TS_.Form1.resources
-C:\Users\mich1\OneDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Klient_TS_.Properties.Resources.resources
-C:\Users\mich1\OneDrive\Studia\SEMESTR III WŁASNE NOTATKI\Technologie sieciowe\Laboratoria\nr 7 - Programowanie gniazdek sieciowych\Program TS\Klient[TS]\Serwer[TS]\obj\Debug\Klient[TS].csproj.GenerateResource.Cache
+F:\Edukacja\studia\Informatyka rok 2\semestr 3\Technologie sieciowe\moje\laboratoria\7.Programowanie gniazdek\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe.config
+F:\Edukacja\studia\Informatyka rok 2\semestr 3\Technologie sieciowe\moje\laboratoria\7.Programowanie gniazdek\Klient[TS]\Serwer[TS]\obj\Debug\Serwer[TS].exe
+F:\Edukacja\studia\Informatyka rok 2\semestr 3\Technologie sieciowe\moje\laboratoria\7.Programowanie gniazdek\Klient[TS]\Serwer[TS]\obj\Debug\Serwer[TS].pdb
+F:\Edukacja\studia\Informatyka rok 2\semestr 3\Technologie sieciowe\moje\laboratoria\7.Programowanie gniazdek\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe
+F:\Edukacja\studia\Informatyka rok 2\semestr 3\Technologie sieciowe\moje\laboratoria\7.Programowanie gniazdek\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].pdb
+F:\Edukacja\studia\Informatyka rok 2\semestr 3\Technologie sieciowe\moje\laboratoria\7.Programowanie gniazdek\Klient[TS]\Serwer[TS]\obj\Debug\Klient[TS].csprojResolveAssemblyReference.cache
+F:\Edukacja\studia\Informatyka rok 2\semestr 3\Technologie sieciowe\moje\laboratoria\7.Programowanie gniazdek\Klient[TS]\Serwer[TS]\obj\Debug\Klient_TS_.Form1.resources
+F:\Edukacja\studia\Informatyka rok 2\semestr 3\Technologie sieciowe\moje\laboratoria\7.Programowanie gniazdek\Klient[TS]\Serwer[TS]\obj\Debug\Klient_TS_.Properties.Resources.resources
+F:\Edukacja\studia\Informatyka rok 2\semestr 3\Technologie sieciowe\moje\laboratoria\7.Programowanie gniazdek\Klient[TS]\Serwer[TS]\obj\Debug\Klient[TS].csproj.GenerateResource.Cache
+C:\Users\mich1\Desktop\Klient[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe.config
+C:\Users\mich1\Desktop\Klient[TS]\Serwer[TS]\obj\Debug\Serwer[TS].exe
+C:\Users\mich1\Desktop\Klient[TS]\Serwer[TS]\obj\Debug\Serwer[TS].pdb

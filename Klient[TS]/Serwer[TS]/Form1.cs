@@ -97,7 +97,7 @@ namespace Klient_TS_
                 klient = new TcpClient(serwerIP, port);
                 NetworkStream ns = klient.GetStream();
                 czytanie = new BinaryReader(ns);
-                pisanie = new BinaryWriter(ns, System.Text.Encoding.UTF32);
+                pisanie = new BinaryWriter(ns);
                 pisanie.Write("###Hi###");
                 this.UstawTekst("Próba połączenia z serwerem");
                 polaczeniaAktywne = true;
