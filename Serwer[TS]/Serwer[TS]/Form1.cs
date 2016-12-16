@@ -21,18 +21,18 @@ namespace Serwer_TS_
         }
         private TcpListener serwer = null;
         private TcpClient klient = null;
-      //  private string adresIP = "127.0.0.1";
+      //private string adresIP = "127.0.0.1";
         private BinaryReader czytanie = null;
         private BinaryWriter pisanie = null;
         private bool polaczeniaAktywne = false;
         private string loginKlienta = "wafelek";
         private string hasloKlienta = "zaq1@WSX";
         delegate void UstawTekstCall(string tekst);
-       //watki dla przyciskow//
-       // delegate void UstawStopCall(bool dostepnosc);
-        //delegate void UstawStartCall(bool dostepnosc);
-        //delegate void UstawLoginCall(bool dostepnosc);
-        //delegate void UstawPasswordCall(bool dostepnosc);
+      //watki dla przyciskow//
+      //delegate void UstawStopCall(bool dostepnosc);
+      //delegate void UstawStartCall(bool dostepnosc);
+      //delegate void UstawLoginCall(bool dostepnosc);
+      //delegate void UstawPasswordCall(bool dostepnosc);
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -64,16 +64,15 @@ namespace Serwer_TS_
             serwer.Stop();
             klient.Close();
             UstawTekst("Zatrzymano pracę serwera");
-            //UstawStop(false);
-            //UstawLogin(false);
-           // UstawPassword(false);
-          //  UstawStart(true)
+          //UstawStop(false);
+          //UstawLogin(false);
+          //UstawPassword(false);
+          //UstawStart(true)
             polaczeniaAktywne = false;
         }
 
         private void login_Click(object sender, EventArgs e)
         {
-            
             if (polaczeniaAktywne == true)
             {
                 pisanie.Write(Text_Login.Text);
@@ -143,7 +142,7 @@ namespace Serwer_TS_
                 UstawTekst("Połączenie przerwane");
                 polaczeniaAktywne = false;
             }
-    }
+        }
 
         private void odczytywanie_wiadomosci_od_klienta_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -153,31 +152,22 @@ namespace Serwer_TS_
             string kod = "###0";
             /*kody wiadomosci:
              * 0 - inna wiadomosc, nie wyswietlana
-             * 1 - Autoryzacja powiodła się
-             * 2 - Autoryzcja nie powiodła sie
+             * 1 - Uwierzytelnienie powiodło się
+             * 2 - Uwierzytelnienie nie powiodło sie
             */
             try
             {
                 while((wiadomosc=czytanie.ReadString())!="###BYE###")
                 {
-
-                   
-
-
-                        if (wiadomosc.Equals(loginKlienta) == true)
+                    if (wiadomosc.Equals(loginKlienta) == true)
                             login = true;
-
-
-                        if (wiadomosc.Equals(hasloKlienta) == true)
+                    if (wiadomosc.Equals(hasloKlienta) == true)
                             haslo = true;
-                    
-
                     if (wiadomosc.Equals("###1"))
-                        WpiszTekst("ktos", "Autoryzacja powiodła się");
-
+                        WpiszTekst("ktos", "Uwierzytelnienie powiodło się");
                     if (wiadomosc.Equals("###2"))
-                        WpiszTekst("ktos", "Autoryzacja nie powiodła się");
-                      //   WpiszTekst("ktos", wiadomosc);
+                        WpiszTekst("ktos", "Uwierzytelnienie nie powiodło się");
+                      //WpiszTekst("ktos", wiadomosc);
 
                     if ((login == true) && (haslo == true) && (wiadomosc.Equals("###Haslo")))
                     {
@@ -186,7 +176,6 @@ namespace Serwer_TS_
                         kod = "###0";
                         login = false;
                         haslo = false;
-
                     }
                     else
                     {
@@ -197,11 +186,6 @@ namespace Serwer_TS_
                             kod = "###0";
                         }
                     }
-                
-                    
-                    
-
-
                 }
                 klient.Close();
                 serwer.Stop();

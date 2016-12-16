@@ -26,10 +26,10 @@ namespace Klient_TS_
         private string hasloSerwera = "1qaz@WSX";
         delegate void UstawTekstCall(string tekst);
         private TcpClient klient=null;
-        //watki dla przyciskow//
-       // delegate void UstawLoginCall(bool dostepnosc);
-       // delegate void UstawPasswordCall(bool dostepnosc);
-       // delegate void UstawPolaczCall(bool dostepnosc);
+      //watki dla przyciskow//
+      //delegate void UstawLoginCall(bool dostepnosc);
+      //delegate void UstawPasswordCall(bool dostepnosc);
+      //delegate void UstawPolaczCall(bool dostepnosc);
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -101,18 +101,18 @@ namespace Klient_TS_
                 pisanie.Write("###Hi###");
                 this.UstawTekst("Próba połączenia z serwerem");
                 polaczeniaAktywne = true;
-                //UstawLogin(true);
-               // UstawPassword(true);
-               // UstawPolacz(false);
+              //UstawLogin(true);
+              //UstawPassword(true);
+              //UstawPolacz(false);
                 odczytanie_wiadomosc_z_serwera.RunWorkerAsync();
             }
             catch
             {
                 this.UstawTekst("Nie można nawiązać połączenia");
                 polaczeniaAktywne = false;
-               // UstawLogin(false);
-               // UstawPassword(false);
-               // UstawPolacz(true);
+              //UstawLogin(false);
+              //UstawPassword(false);
+              //UstawPolacz(true);
                
             }
         }
@@ -126,32 +126,23 @@ namespace Klient_TS_
             string kod = "###0";
             /*kody wiadomosci:
              * 0 - inna wiadomosc, nie wyswietlana
-             * 1 - Autoryzacja powiodła się
-             * 2 - Autoryzcja nie powiodła sie
+             * 1 - Uwierzytelnienie powiodło się
+             * 2 - Uwierzytelnienie nie powiodło sie
             */
             
             try
             {
                 while ((wiadomosc = czytanie.ReadString()) != "###BYE###")
                 {
-
-                    
-
-
-                        if (wiadomosc.Equals(loginSerwera) == true)
+                    if (wiadomosc.Equals(loginSerwera) == true)
                             login = true;
-
-
-                        if (wiadomosc.Equals(hasloSerwera) == true)
+                    if (wiadomosc.Equals(hasloSerwera) == true)
                             haslo = true;
-                    
                     if (wiadomosc.Equals("###1"))
-                        WpiszTekst("ktos", "Autoryzacja powiodła się");
-
+                        WpiszTekst("ktos", "Uwierzytelnienie powiodło się");
                     if (wiadomosc.Equals("###2"))
-                        WpiszTekst("ktos", "Autoryzacja nie powiodła się");
-
-                    //   WpiszTekst("ktos", wiadomosc);
+                        WpiszTekst("ktos", "Uwierzytelnienie nie powiodło się");
+                      //WpiszTekst("ktos", wiadomosc);
 
                     if ((login == true) && (haslo == true) && (wiadomosc.Equals("###Haslo")))
                     {
@@ -160,7 +151,6 @@ namespace Klient_TS_
                         kod = "###0";
                         login = false;
                         haslo = false;
-
                     }
                     else
                     {
@@ -170,19 +160,14 @@ namespace Klient_TS_
                             pisanie.Write(kod);
                             kod = "###0";
                         }
-                        
                     }
-                    
-                    
-
                 }
                 UstawTekst("Połączenie zostało przerwane");
                 polaczeniaAktywne = false;
-                //UstawLogin(false);
-               // UstawPassword(false);
-               // UstawPolacz(true);
+              //UstawLogin(false);
+              //UstawPassword(false);
+              //UstawPolacz(true);
                 klient.Close();
-                
             }
             catch
             {
@@ -211,7 +196,6 @@ namespace Klient_TS_
         private void WpiszTekst(string kto, string wiadomosc)
         {
             UstawTekst(kto + "napisał: " + wiadomosc);
-
         }
 
         //watki dla przyciskow//

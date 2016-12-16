@@ -53,3 +53,12 @@ F:\Edukacja\studia\Informatyka rok 2\semestr 3\Technologie sieciowe\moje\laborat
 C:\Users\mich1\Desktop\Serwer[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe.config
 C:\Users\mich1\Desktop\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].exe
 C:\Users\mich1\Desktop\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].pdb
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe.config
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].exe
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].pdb
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\Serwer[TS].exe
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\Serwer[TS].pdb
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].csprojResolveAssemblyReference.cache
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer_TS_.Form1.resources
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer_TS_.Properties.Resources.resources
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].csproj.GenerateResource.Cache
