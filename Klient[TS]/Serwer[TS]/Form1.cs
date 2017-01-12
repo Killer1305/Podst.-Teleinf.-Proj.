@@ -34,7 +34,6 @@ namespace Klient_TS_
         //delegate void UstawPasswordCall(bool dostepnosc);
         //delegate void UstawPolaczCall(bool dostepnosc);
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
             listBox1.Items.Add("Kliknij połącz by połączyć z serwerem...");
