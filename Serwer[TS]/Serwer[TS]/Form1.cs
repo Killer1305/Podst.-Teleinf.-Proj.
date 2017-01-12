@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace Serwer_TS_
 {
@@ -21,18 +22,20 @@ namespace Serwer_TS_
         }
         private TcpListener serwer = null;
         private TcpClient klient = null;
-      //private string adresIP = "127.0.0.1";
+        //private string adresIP = "127.0.0.1";
         private BinaryReader czytanie = null;
         private BinaryWriter pisanie = null;
         private bool polaczeniaAktywne = false;
         private string loginKlienta = "wafelek";
-        private string hasloKlienta = "zaq1@WSX";
+        private string hasloKlienta = "c380f83334d60bf35a134094eb538d60dc6f9";
         delegate void UstawTekstCall(string tekst);
-      //watki dla przyciskow//
-      //delegate void UstawStopCall(bool dostepnosc);
-      //delegate void UstawStartCall(bool dostepnosc);
-      //delegate void UstawLoginCall(bool dostepnosc);
-      //delegate void UstawPasswordCall(bool dostepnosc);
+        byte[] SHA1_Passwd_byte;
+        string SHA1_Passwd_string = "";
+        //watki dla przyciskow//
+        //delegate void UstawStopCall(bool dostepnosc);
+        //delegate void UstawStartCall(bool dostepnosc);
+        //delegate void UstawLoginCall(bool dostepnosc);
+        //delegate void UstawPasswordCall(bool dostepnosc);
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -64,10 +67,10 @@ namespace Serwer_TS_
             serwer.Stop();
             klient.Close();
             UstawTekst("Zatrzymano pracę serwera");
-          //UstawStop(false);
-          //UstawLogin(false);
-          //UstawPassword(false);
-          //UstawStart(true)
+            //UstawStop(false);
+            //UstawLogin(false);
+            //UstawPassword(false);
+            //UstawStart(true)
             polaczeniaAktywne = false;
         }
 
@@ -85,7 +88,12 @@ namespace Serwer_TS_
         {
             if (polaczeniaAktywne == true)
             {
-                pisanie.Write(Text_password.Text);
+                SHA1_Passwd_byte = hashuj(Text_password.Text);
+                foreach (byte Bajt in SHA1_Passwd_byte)
+                {
+                    SHA1_Passwd_string += Bajt.ToString("x");
+                }
+                pisanie.Write(SHA1_Passwd_string);
                 pisanie.Write("###Haslo");
                 UstawTekst("Wysłano hasło");
             }
@@ -138,7 +146,7 @@ namespace Serwer_TS_
             }
             catch//(Exception error)
             {
-               // MessageBox.Show(error.ToString());
+                //MessageBox.Show(error.ToString());
                 UstawTekst("Połączenie przerwane");
                 polaczeniaAktywne = false;
             }
@@ -167,7 +175,7 @@ namespace Serwer_TS_
                         WpiszTekst("ktos", "Uwierzytelnienie powiodło się");
                     if (wiadomosc.Equals("###2"))
                         WpiszTekst("ktos", "Uwierzytelnienie nie powiodło się");
-                      //WpiszTekst("ktos", wiadomosc);
+                    //WpiszTekst("ktos", wiadomosc);
 
                     if ((login == true) && (haslo == true) && (wiadomosc.Equals("###Haslo")))
                     {
@@ -197,7 +205,7 @@ namespace Serwer_TS_
             {
                 UstawTekst("Klient rozłączony");
                 polaczeniaAktywne = false;
-               // UstawStop(false);
+                //UstawStop(false);
                 //UstawLogin(false);
                 //UstawPassword(false);
                 //UstawStart(true);
@@ -223,6 +231,12 @@ namespace Serwer_TS_
             {
                 this.listBox1.Items.Add(wiadomosc);
             }
+        }
+
+        static byte[] hashuj(String dane)
+        {
+            SHA1 sha1_hash = new SHA1CryptoServiceProvider();
+            return sha1_hash.ComputeHash(Encoding.UTF8.GetBytes(dane));
         }
 
         ///watki dla przyciskow///

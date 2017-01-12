@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace Klient_TS_
 {
@@ -23,13 +24,15 @@ namespace Klient_TS_
         private BinaryWriter pisanie = null;
         private bool polaczeniaAktywne;
         private string loginSerwera = "wafeleczki";
-        private string hasloSerwera = "1qaz@WSX";
+        private string hasloSerwera = "86c16a459ecf39fd76a8e750f9d574c4722f22b";
         delegate void UstawTekstCall(string tekst);
         private TcpClient klient=null;
-      //watki dla przyciskow//
-      //delegate void UstawLoginCall(bool dostepnosc);
-      //delegate void UstawPasswordCall(bool dostepnosc);
-      //delegate void UstawPolaczCall(bool dostepnosc);
+        byte[] SHA1_Passwd_byte;
+        string SHA1_Passwd_string = "";
+        //watki dla przyciskow//
+        //delegate void UstawLoginCall(bool dostepnosc);
+        //delegate void UstawPasswordCall(bool dostepnosc);
+        //delegate void UstawPolaczCall(bool dostepnosc);
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,8 +57,6 @@ namespace Klient_TS_
             }
         }
 
-
-
         private void login_click(object sender, EventArgs e)
         {
             if (polaczeniaAktywne == true)
@@ -70,7 +71,12 @@ namespace Klient_TS_
         {
             if (polaczeniaAktywne == true)
             {
-                pisanie.Write(Text_password.Text);
+                SHA1_Passwd_byte = hashuj(Text_password.Text);
+                foreach (byte Bajt in SHA1_Passwd_byte)
+                {
+                    SHA1_Passwd_string += Bajt.ToString("x");
+                }
+                pisanie.Write(SHA1_Passwd_string);
                 UstawTekst("Wysłano hasło");
                 pisanie.Write("###Haslo");
             }
@@ -101,18 +107,18 @@ namespace Klient_TS_
                 pisanie.Write("###Hi###");
                 this.UstawTekst("Próba połączenia z serwerem");
                 polaczeniaAktywne = true;
-              //UstawLogin(true);
-              //UstawPassword(true);
-              //UstawPolacz(false);
+                //UstawLogin(true);
+                //UstawPassword(true);
+                //UstawPolacz(false);
                 odczytanie_wiadomosc_z_serwera.RunWorkerAsync();
             }
             catch
             {
                 this.UstawTekst("Nie można nawiązać połączenia");
                 polaczeniaAktywne = false;
-              //UstawLogin(false);
-              //UstawPassword(false);
-              //UstawPolacz(true);
+                //UstawLogin(false);
+                //UstawPassword(false);
+                //UstawPolacz(true);
                
             }
         }
@@ -142,7 +148,7 @@ namespace Klient_TS_
                         WpiszTekst("ktos", "Uwierzytelnienie powiodło się");
                     if (wiadomosc.Equals("###2"))
                         WpiszTekst("ktos", "Uwierzytelnienie nie powiodło się");
-                      //WpiszTekst("ktos", wiadomosc);
+                        //WpiszTekst("ktos", wiadomosc);
 
                     if ((login == true) && (haslo == true) && (wiadomosc.Equals("###Haslo")))
                     {
@@ -164,17 +170,17 @@ namespace Klient_TS_
                 }
                 UstawTekst("Połączenie zostało przerwane");
                 polaczeniaAktywne = false;
-              //UstawLogin(false);
-              //UstawPassword(false);
-              //UstawPolacz(true);
+                //UstawLogin(false);
+                //UstawPassword(false);
+                //UstawPolacz(true);
                 klient.Close();
             }
             catch
             {
                 UstawTekst("Połączenie zostało przerwane");
                 polaczeniaAktywne = false;
-               // UstawLogin(false);
-               // UstawPassword(false);
+                //UstawLogin(false);
+                //UstawPassword(false);
                 //UstawPolacz(true);
                 klient.Close();
             }
@@ -196,6 +202,12 @@ namespace Klient_TS_
         private void WpiszTekst(string kto, string wiadomosc)
         {
             UstawTekst(kto + "napisał: " + wiadomosc);
+        }
+
+        static byte[] hashuj(String dane)
+        {
+            SHA1 sha1_hash = new SHA1CryptoServiceProvider();
+            return sha1_hash.ComputeHash(Encoding.UTF8.GetBytes(dane));
         }
 
         //watki dla przyciskow//
