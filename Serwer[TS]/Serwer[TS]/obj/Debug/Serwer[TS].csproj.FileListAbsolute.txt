@@ -62,3 +62,10 @@ C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwe
 C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer_TS_.Form1.resources
 C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer_TS_.Properties.Resources.resources
 C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer[TS].csproj.GenerateResource.Cache
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\System.Data.SQLite.dll
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\System.Data.SQLite.xml
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\EntityFramework.dll
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\EntityFramework.xml
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer_TS_.Database.Query.resources

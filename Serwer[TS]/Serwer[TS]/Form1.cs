@@ -22,7 +22,6 @@ namespace Serwer_TS_
         }
         private TcpListener serwer = null;
         private TcpClient klient = null;
-        //private string adresIP = "127.0.0.1";
         private BinaryReader czytanie = null;
         private BinaryWriter pisanie = null;
         private bool polaczeniaAktywne = false;
@@ -31,11 +30,6 @@ namespace Serwer_TS_
         delegate void UstawTekstCall(string tekst);
         byte[] SHA1_Passwd_byte;
         string SHA1_Passwd_string = "";
-        //watki dla przyciskow//
-        //delegate void UstawStopCall(bool dostepnosc);
-        //delegate void UstawStartCall(bool dostepnosc);
-        //delegate void UstawLoginCall(bool dostepnosc);
-        //delegate void UstawPasswordCall(bool dostepnosc);
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -67,10 +61,6 @@ namespace Serwer_TS_
             serwer.Stop();
             klient.Close();
             UstawTekst("Zatrzymano pracę serwera");
-            //UstawStop(false);
-            //UstawLogin(false);
-            //UstawPassword(false);
-            //UstawStart(true)
             polaczeniaAktywne = false;
         }
 
@@ -125,10 +115,6 @@ namespace Serwer_TS_
                 pisanie = new BinaryWriter(ns);
                 if (czytanie.ReadString() == "###Hi###")
                 {
-                    //UstawStop(true);
-                    //UstawLogin(true);
-                    //UstawPassword(true);
-                    //UstawStart(false);
                     UstawTekst("Klient połączył się z serwerem");
                     odczytywanie_wiadomosci_od_klienta.RunWorkerAsync();
                 }
@@ -138,15 +124,10 @@ namespace Serwer_TS_
                     klient.Close();
                     serwer.Stop();
                     polaczeniaAktywne = false;
-                    //UstawStop(false);
-                    //UstawLogin(false);
-                    //UstawPassword(false);
-                    //UstawStart(true);
                 }
             }
-            catch//(Exception error)
+            catch
             {
-                //MessageBox.Show(error.ToString());
                 UstawTekst("Połączenie przerwane");
                 polaczeniaAktywne = false;
             }
@@ -171,10 +152,10 @@ namespace Serwer_TS_
                             login = true;
                     if (wiadomosc.Equals(hasloKlienta) == true)
                             haslo = true;
-                    if (wiadomosc.Equals("###1"))
-                        WpiszTekst("ktos", "Uwierzytelnienie powiodło się");
-                    if (wiadomosc.Equals("###2"))
-                        WpiszTekst("ktos", "Uwierzytelnienie nie powiodło się");
+                    //if (wiadomosc.Equals("###1"))
+                    //    WpiszTekst("ktos", "Uwierzytelnienie powiodło się");
+                    //if (wiadomosc.Equals("###2"))
+                    //    WpiszTekst("ktos", "Uwierzytelnienie nie powiodło się");
                     //WpiszTekst("ktos", wiadomosc);
 
                     if ((login == true) && (haslo == true) && (wiadomosc.Equals("###Haslo")))
@@ -205,10 +186,6 @@ namespace Serwer_TS_
             {
                 UstawTekst("Klient rozłączony");
                 polaczeniaAktywne = false;
-                //UstawStop(false);
-                //UstawLogin(false);
-                //UstawPassword(false);
-                //UstawStart(true);
                 klient.Close();
                 serwer.Stop();
             }
@@ -239,59 +216,6 @@ namespace Serwer_TS_
             return sha1_hash.ComputeHash(Encoding.UTF8.GetBytes(dane));
         }
 
-        ///watki dla przyciskow///
-        /*
-        private void UstawStop(bool dostepnosc)
-        {
-            if (Stop_button.InvokeRequired)
-            {
-                UstawStopCall g = new UstawStopCall(UstawStop);
-                this.Invoke(g, new object[] { dostepnosc });
-            }
-            else
-            {
-                this.Send_Login.Enabled = dostepnosc;
-            }
-        }
-
-        private void UstawStart(bool dostepnosc)
-        {
-            if (Start_button.InvokeRequired)
-            {
-                UstawStartCall h = new UstawStartCall(UstawStart);
-                this.Invoke(h, new object[] { dostepnosc });
-            }
-            else
-            {
-                this.Send_Login.Enabled = dostepnosc;
-            }
-        }
-
-        private void UstawLogin(bool dostepnosc)
-        {
-            if (Send_Login.InvokeRequired)
-            {
-                UstawLoginCall i = new UstawLoginCall(UstawLogin);
-                this.Invoke(i, new object[] { dostepnosc });
-            }
-            else
-            {
-                this.Send_Login.Enabled = dostepnosc;
-            }
-        }
-
-        private void UstawPassword(bool dostepnosc)
-        {
-            if (Send_Login.InvokeRequired)
-            {
-                UstawPasswordCall j = new UstawPasswordCall(UstawPassword);
-                this.Invoke(j, new object[] { dostepnosc });
-            }
-            else
-            {
-                this.Send_Login.Enabled = dostepnosc;
-            }
-        }
-         * */
+       
     }
 }
