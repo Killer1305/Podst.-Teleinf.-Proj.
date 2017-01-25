@@ -11,6 +11,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.IO;
 using System.Security.Cryptography;
+using Serwer_TS_.Database;
 
 namespace Serwer_TS_
 {
@@ -19,17 +20,19 @@ namespace Serwer_TS_
         public Form1()
         {
             InitializeComponent();
+            m_oDBConnector = Connector.GetInstance();
         }
         private TcpListener serwer = null;
         private TcpClient klient = null;
         private BinaryReader czytanie = null;
         private BinaryWriter pisanie = null;
         private bool polaczeniaAktywne = false;
-        private string loginKlienta = "wafelek";
-        private string hasloKlienta = "c380f83334d60bf35a134094eb538d60dc6f9";
+        //private string loginKlienta = "";
+        public string loginKlienta = "wafelek";
+        //private string hasloKlienta = "";
+        public string hasloKlienta = "c380f83334d60bf35a134094eb538d60dc6f9";
         delegate void UstawTekstCall(string tekst);
-        byte[] SHA1_Passwd_byte;
-        string SHA1_Passwd_string = "";
+        private Connector m_oDBConnector;
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -78,12 +81,12 @@ namespace Serwer_TS_
         {
             if (polaczeniaAktywne == true)
             {
-                SHA1_Passwd_byte = hashuj(Text_password.Text);
-                foreach (byte Bajt in SHA1_Passwd_byte)
-                {
-                    SHA1_Passwd_string += Bajt.ToString("x");
-                }
-                pisanie.Write(SHA1_Passwd_string);
+                //SHA1_Passwd_byte = hashuj(Text_password.Text);
+                //foreach (byte Bajt in SHA1_Passwd_byte)
+                //{
+                //    SHA1_Passwd_string += Bajt.ToString("x");
+                //}
+                //pisanie.Write(SHA1_Passwd_string);
                 pisanie.Write("###Haslo");
                 UstawTekst("Wysłano hasło");
             }
@@ -139,6 +142,8 @@ namespace Serwer_TS_
             bool haslo = false;
             bool login = false;
             string kod = "###0";
+            string test = m_oDBConnector.GetPassword(loginKlienta);
+            
             /*kody wiadomosci:
              * 0 - inna wiadomosc, nie wyswietlana
              * 1 - Uwierzytelnienie powiodło się
@@ -149,14 +154,17 @@ namespace Serwer_TS_
                 while((wiadomosc=czytanie.ReadString())!="###BYE###")
                 {
                     if (wiadomosc.Equals(loginKlienta) == true)
-                            login = true;
+                    {
+                        login = true;
+                    }
                     if (wiadomosc.Equals(hasloKlienta) == true)
-                            haslo = true;
+                    {
+                        haslo = true;
+                    }
                     //if (wiadomosc.Equals("###1"))
                     //    WpiszTekst("ktos", "Uwierzytelnienie powiodło się");
                     //if (wiadomosc.Equals("###2"))
                     //    WpiszTekst("ktos", "Uwierzytelnienie nie powiodło się");
-                    //WpiszTekst("ktos", wiadomosc);
 
                     if ((login == true) && (haslo == true) && (wiadomosc.Equals("###Haslo")))
                     {
@@ -210,11 +218,7 @@ namespace Serwer_TS_
             }
         }
 
-        static byte[] hashuj(String dane)
-        {
-            SHA1 sha1_hash = new SHA1CryptoServiceProvider();
-            return sha1_hash.ComputeHash(Encoding.UTF8.GetBytes(dane));
-        }
+        
 
        
     }

@@ -28,5 +28,15 @@ namespace Serwer_TS_.Database
         {
             return Database.SqlQuery<string>(Query.GET_PASSWORD, Login).SingleOrDefault();
         }
+
+        public string GetGroup (string Login)
+        {
+            return Database.SqlQuery<string>(Query.GET_GROUP, Login).SingleOrDefault();
+        }
+
+        public string GetLogin(string Login)
+        {
+            return Database.SqlQuery<string>(Query.GET_LOGIN, Login).SingleOrDefault();
+        }
     }
 }

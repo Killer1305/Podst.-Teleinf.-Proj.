@@ -70,6 +70,15 @@ namespace Serwer_TS_.Database {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT Login from Users where Login={0};.
+        /// </summary>
+        internal static string GET_LOGIN {
+            get {
+                return ResourceManager.GetString("GET_LOGIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT Password from Users where Login ={0};.
         /// </summary>
         internal static string GET_PASSWORD {

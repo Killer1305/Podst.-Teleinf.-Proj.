@@ -121,6 +121,10 @@
     <value>SELECT Group from Users where Login ={0};</value>
     <comment>Pobiera numer grupy na podstawie wpisanego loginu</comment>
   </data>
+  <data name="GET_LOGIN" xml:space="preserve">
+    <value>SELECT Login from Users where Login={0};</value>
+    <comment>Pobiera login</comment>
+  </data>
   <data name="GET_PASSWORD" xml:space="preserve">
     <value>SELECT Password from Users where Login ={0};</value>
     <comment>Pobiera hasło na podstawie wpisanego loginu</comment>

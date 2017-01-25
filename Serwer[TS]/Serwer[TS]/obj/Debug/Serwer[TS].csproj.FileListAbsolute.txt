@@ -69,3 +69,7 @@ C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwe
 C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\EntityFramework.xml
 C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\obj\Debug\Serwer_TS_.Database.Query.resources
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\x86\sqlite3.dll
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\x64\sqlite3.dll
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\mich1\Documents\Visual Studio 2015\Projects\Projekt_PT\Serwer[TS]\Serwer[TS]\bin\Debug\System.Data.SQLite.Linq.dll
