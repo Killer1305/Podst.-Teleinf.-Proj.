@@ -45,6 +45,9 @@ namespace Serwer_TS_
             if (polaczeniaAktywne == false)
             {
                 polaczeniaAktywne = true;
+                string test = m_oDBConnector.GetPassword(loginKlienta);
+                UstawTekst(test);
+
                 oczekiwanie_na_polaczenie.RunWorkerAsync();
             }
             else
@@ -142,7 +145,6 @@ namespace Serwer_TS_
             bool haslo = false;
             bool login = false;
             string kod = "###0";
-            string test = m_oDBConnector.GetPassword(loginKlienta);
             
             /*kody wiadomosci:
              * 0 - inna wiadomosc, nie wyswietlana
