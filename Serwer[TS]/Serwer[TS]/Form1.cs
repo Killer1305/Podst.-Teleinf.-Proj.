@@ -27,10 +27,6 @@ namespace Serwer_TS_
         private BinaryReader czytanie = null;
         private BinaryWriter pisanie = null;
         private bool polaczeniaAktywne = false;
-        //private string loginKlienta = "";
-        public string loginKlienta = "wafelek";
-        //private string hasloKlienta = "";
-        public string hasloKlienta = "c380f83334d60bf35a134094eb538d60dc6f9";
         delegate void UstawTekstCall(string tekst);
         private Connector m_oDBConnector;
 
@@ -45,9 +41,6 @@ namespace Serwer_TS_
             if (polaczeniaAktywne == false)
             {
                 polaczeniaAktywne = true;
-                string test = m_oDBConnector.GetPassword(loginKlienta);
-                UstawTekst(test);
-
                 oczekiwanie_na_polaczenie.RunWorkerAsync();
             }
             else
@@ -145,6 +138,7 @@ namespace Serwer_TS_
             bool haslo = false;
             bool login = false;
             string kod = "###0";
+            string user_tmp = "";
             
             /*kody wiadomosci:
              * 0 - inna wiadomosc, nie wyswietlana
@@ -155,18 +149,15 @@ namespace Serwer_TS_
             {
                 while((wiadomosc=czytanie.ReadString())!="###BYE###")
                 {
-                    if (wiadomosc.Equals(loginKlienta) == true)
+                    if (wiadomosc.Equals(m_oDBConnector.GetLogin(wiadomosc)) == true)
                     {
                         login = true;
+                        user_tmp = m_oDBConnector.GetLogin(wiadomosc);
                     }
-                    if (wiadomosc.Equals(hasloKlienta) == true)
+                    if (wiadomosc.Equals(m_oDBConnector.GetPassword(user_tmp)) == true)
                     {
                         haslo = true;
-                    }
-                    //if (wiadomosc.Equals("###1"))
-                    //    WpiszTekst("ktos", "Uwierzytelnienie powiodło się");
-                    //if (wiadomosc.Equals("###2"))
-                    //    WpiszTekst("ktos", "Uwierzytelnienie nie powiodło się");
+                    }                   
 
                     if ((login == true) && (haslo == true) && (wiadomosc.Equals("###Haslo")))
                     {

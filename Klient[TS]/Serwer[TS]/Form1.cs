@@ -106,18 +106,12 @@ namespace Klient_TS_
                 pisanie.Write("###Hi###");
                 this.UstawTekst("Próba połączenia z serwerem");
                 polaczeniaAktywne = true;
-                //UstawLogin(true);
-                //UstawPassword(true);
-                //UstawPolacz(false);
                 odczytanie_wiadomosc_z_serwera.RunWorkerAsync();
             }
             catch
             {
                 this.UstawTekst("Nie można nawiązać połączenia");
                 polaczeniaAktywne = false;
-                //UstawLogin(false);
-                //UstawPassword(false);
-                //UstawPolacz(true);
                
             }
         }
@@ -147,7 +141,6 @@ namespace Klient_TS_
                         WpiszTekst("ktos", "Uwierzytelnienie powiodło się");
                     if (wiadomosc.Equals("###2"))
                         WpiszTekst("ktos", "Uwierzytelnienie nie powiodło się");
-                        //WpiszTekst("ktos", wiadomosc);
 
                     if ((login == true) && (haslo == true) && (wiadomosc.Equals("###Haslo")))
                     {
@@ -169,18 +162,12 @@ namespace Klient_TS_
                 }
                 UstawTekst("Połączenie zostało przerwane");
                 polaczeniaAktywne = false;
-                //UstawLogin(false);
-                //UstawPassword(false);
-                //UstawPolacz(true);
                 klient.Close();
             }
             catch
             {
                 UstawTekst("Połączenie zostało przerwane");
                 polaczeniaAktywne = false;
-                //UstawLogin(false);
-                //UstawPassword(false);
-                //UstawPolacz(true);
                 klient.Close();
             }
         }
@@ -209,46 +196,5 @@ namespace Klient_TS_
             return sha1_hash.ComputeHash(Encoding.UTF8.GetBytes(dane));
         }
 
-        //watki dla przyciskow//
-        /*
-        private void UstawLogin(bool dostepnosc)
-        {
-            if (Send_Login.InvokeRequired)
-            {
-                UstawLoginCall g = new UstawLoginCall(UstawLogin);
-                this.Invoke(g, new object[] { dostepnosc });
-            }
-            else
-            {
-                this.Send_Login.Enabled = dostepnosc;
-            }
-        }
-
-        private void UstawPassword(bool dostepnosc)
-        {
-            if (Send_Login.InvokeRequired)
-            {
-                UstawPasswordCall h = new UstawPasswordCall(UstawPassword);
-                this.Invoke(h, new object[] { dostepnosc });
-            }
-            else
-            {
-                this.Send_Login.Enabled = dostepnosc;
-            }
-        }
-
-        private void UstawPolacz(bool dostepnosc)
-        {
-            if (polacz_button.InvokeRequired)
-            {
-                UstawPolaczCall i = new UstawPolaczCall(UstawPolacz);
-                this.Invoke(i, new object[] { dostepnosc });
-            }
-            else
-            {
-                this.Send_Login.Enabled = dostepnosc;
-            }
-        }
-         * */
     }
 }
