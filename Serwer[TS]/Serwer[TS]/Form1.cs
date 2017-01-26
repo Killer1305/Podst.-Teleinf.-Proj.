@@ -138,7 +138,8 @@ namespace Serwer_TS_
                     {
                         kod = "###1";
                         pisanie.Write(kod);
-                        UstawTekst("Uwierzytelniono użytkownika z grupy: " + m_oDBConnector.GetGroup(user_tmp));
+                        UstawTekst("Uwierzytelniono użytkownika: " + user_tmp);
+                        UstawTekst("Członek grupy: " + m_oDBConnector.GetGroup(user_tmp));
                         kod = "###0";
                         login = false;
                         haslo = false;
