@@ -30,12 +30,6 @@
         {
             this.Text_IP = new System.Windows.Forms.TextBox();
             this.Label_IP = new System.Windows.Forms.Label();
-            this.Send_Login = new System.Windows.Forms.Button();
-            this.Send_Password = new System.Windows.Forms.Button();
-            this.Text_Login = new System.Windows.Forms.TextBox();
-            this.Text_password = new System.Windows.Forms.TextBox();
-            this.Label_Login = new System.Windows.Forms.Label();
-            this.Label_Password = new System.Windows.Forms.Label();
             this.Label_port = new System.Windows.Forms.Label();
             this.Numer_port = new System.Windows.Forms.NumericUpDown();
             this.Start_button = new System.Windows.Forms.Button();
@@ -49,7 +43,7 @@
             // Text_IP
             // 
             this.Text_IP.Location = new System.Drawing.Point(73, 15);
-            this.Text_IP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Text_IP.Margin = new System.Windows.Forms.Padding(4);
             this.Text_IP.Name = "Text_IP";
             this.Text_IP.Size = new System.Drawing.Size(153, 22);
             this.Text_IP.TabIndex = 0;
@@ -64,65 +58,6 @@
             this.Label_IP.TabIndex = 1;
             this.Label_IP.Text = "Adres IP: ";
             // 
-            // Send_Login
-            // 
-            this.Send_Login.Location = new System.Drawing.Point(248, 60);
-            this.Send_Login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Send_Login.Name = "Send_Login";
-            this.Send_Login.Size = new System.Drawing.Size(100, 28);
-            this.Send_Login.TabIndex = 2;
-            this.Send_Login.Text = "Wyślij login";
-            this.Send_Login.UseVisualStyleBackColor = true;
-            this.Send_Login.Click += new System.EventHandler(this.login_Click);
-            // 
-            // Send_Password
-            // 
-            this.Send_Password.Location = new System.Drawing.Point(248, 92);
-            this.Send_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Send_Password.Name = "Send_Password";
-            this.Send_Password.Size = new System.Drawing.Size(100, 28);
-            this.Send_Password.TabIndex = 3;
-            this.Send_Password.Text = "Wyślij hasło";
-            this.Send_Password.UseVisualStyleBackColor = true;
-            this.Send_Password.Click += new System.EventHandler(this.passwd_Click);
-            // 
-            // Text_Login
-            // 
-            this.Text_Login.Location = new System.Drawing.Point(73, 63);
-            this.Text_Login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Text_Login.Name = "Text_Login";
-            this.Text_Login.Size = new System.Drawing.Size(165, 22);
-            this.Text_Login.TabIndex = 4;
-            // 
-            // Text_password
-            // 
-            this.Text_password.Location = new System.Drawing.Point(73, 95);
-            this.Text_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Text_password.Name = "Text_password";
-            this.Text_password.PasswordChar = '*';
-            this.Text_password.Size = new System.Drawing.Size(165, 22);
-            this.Text_password.TabIndex = 5;
-            // 
-            // Label_Login
-            // 
-            this.Label_Login.AutoSize = true;
-            this.Label_Login.Location = new System.Drawing.Point(16, 66);
-            this.Label_Login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Label_Login.Name = "Label_Login";
-            this.Label_Login.Size = new System.Drawing.Size(47, 17);
-            this.Label_Login.TabIndex = 6;
-            this.Label_Login.Text = "Login:";
-            // 
-            // Label_Password
-            // 
-            this.Label_Password.AutoSize = true;
-            this.Label_Password.Location = new System.Drawing.Point(16, 98);
-            this.Label_Password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Label_Password.Name = "Label_Password";
-            this.Label_Password.Size = new System.Drawing.Size(52, 17);
-            this.Label_Password.TabIndex = 7;
-            this.Label_Password.Text = "Hasło: ";
-            // 
             // Label_port
             // 
             this.Label_port.AutoSize = true;
@@ -136,7 +71,7 @@
             // Numer_port
             // 
             this.Numer_port.Location = new System.Drawing.Point(275, 16);
-            this.Numer_port.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Numer_port.Margin = new System.Windows.Forms.Padding(4);
             this.Numer_port.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -154,7 +89,7 @@
             // Start_button
             // 
             this.Start_button.Location = new System.Drawing.Point(45, 278);
-            this.Start_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Start_button.Margin = new System.Windows.Forms.Padding(4);
             this.Start_button.Name = "Start_button";
             this.Start_button.Size = new System.Drawing.Size(100, 28);
             this.Start_button.TabIndex = 15;
@@ -165,7 +100,7 @@
             // Stop_button
             // 
             this.Stop_button.Location = new System.Drawing.Point(201, 278);
-            this.Stop_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Stop_button.Margin = new System.Windows.Forms.Padding(4);
             this.Stop_button.Name = "Stop_button";
             this.Stop_button.Size = new System.Drawing.Size(100, 28);
             this.Stop_button.TabIndex = 16;
@@ -177,10 +112,10 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(16, 127);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Location = new System.Drawing.Point(16, 63);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(331, 132);
+            this.listBox1.Size = new System.Drawing.Size(331, 196);
             this.listBox1.TabIndex = 17;
             // 
             // oczekiwanie_na_polaczenie
@@ -201,15 +136,9 @@
             this.Controls.Add(this.Start_button);
             this.Controls.Add(this.Numer_port);
             this.Controls.Add(this.Label_port);
-            this.Controls.Add(this.Label_Password);
-            this.Controls.Add(this.Label_Login);
-            this.Controls.Add(this.Text_password);
-            this.Controls.Add(this.Text_Login);
-            this.Controls.Add(this.Send_Password);
-            this.Controls.Add(this.Send_Login);
             this.Controls.Add(this.Label_IP);
             this.Controls.Add(this.Text_IP);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Połączenie TCP - serwer";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -223,12 +152,6 @@
 
         private System.Windows.Forms.TextBox Text_IP;
         private System.Windows.Forms.Label Label_IP;
-        private System.Windows.Forms.Button Send_Login;
-        private System.Windows.Forms.Button Send_Password;
-        private System.Windows.Forms.TextBox Text_Login;
-        private System.Windows.Forms.TextBox Text_password;
-        private System.Windows.Forms.Label Label_Login;
-        private System.Windows.Forms.Label Label_Password;
         private System.Windows.Forms.Label Label_port;
         private System.Windows.Forms.NumericUpDown Numer_port;
         private System.Windows.Forms.Button Start_button;

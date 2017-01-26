@@ -23,16 +23,10 @@ namespace Klient_TS_
         private BinaryReader czytanie = null;
         private BinaryWriter pisanie = null;
         private bool polaczeniaAktywne;
-        private string loginSerwera = "wafeleczki";
-        private string hasloSerwera = "86c16a459ecf39fd76a8e750f9d574c4722f22b";
         delegate void UstawTekstCall(string tekst);
         private TcpClient klient=null;
         byte[] SHA1_Passwd_byte;
         string SHA1_Passwd_string = "";
-        //watki dla przyciskow//
-        //delegate void UstawLoginCall(bool dostepnosc);
-        //delegate void UstawPasswordCall(bool dostepnosc);
-        //delegate void UstawPolaczCall(bool dostepnosc);
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -95,6 +89,7 @@ namespace Klient_TS_
                 polaczeniaAktywne = false;
                 return;
             }
+
             int port = System.Convert.ToInt16(Numer_port.Value);
             
             try
@@ -111,8 +106,7 @@ namespace Klient_TS_
             catch
             {
                 this.UstawTekst("Nie można nawiązać połączenia");
-                polaczeniaAktywne = false;
-               
+                polaczeniaAktywne = false;               
             }
         }
 
@@ -120,45 +114,22 @@ namespace Klient_TS_
         {
             string wiadomosc;
             UstawTekst("Połączono z serwerem");
-            bool haslo = false;
-            bool login = false;
             string kod = "###0";
+
             /*kody wiadomosci:
-             * 0 - inna wiadomosc, nie wyswietlana
-             * 1 - Uwierzytelnienie powiodło się
-             * 2 - Uwierzytelnienie nie powiodło sie
+             * ###0 - inna wiadomosc, nie wyswietlana
+             * ###1 - Uwierzytelnienie powiodło się
+             * ###2 - Uwierzytelnienie nie powiodło sie
             */
             
             try
             {
                 while ((wiadomosc = czytanie.ReadString()) != "###BYE###")
                 {
-                    if (wiadomosc.Equals(loginSerwera) == true)
-                            login = true;
-                    if (wiadomosc.Equals(hasloSerwera) == true)
-                            haslo = true;
                     if (wiadomosc.Equals("###1"))
-                        WpiszTekst("ktos", "Uwierzytelnienie powiodło się");
+                        WpiszTekst("Serwer", "Uwierzytelnienie powiodło się");
                     if (wiadomosc.Equals("###2"))
-                        WpiszTekst("ktos", "Uwierzytelnienie nie powiodło się");
-
-                    if ((login == true) && (haslo == true) && (wiadomosc.Equals("###Haslo")))
-                    {
-                        kod = "###1";
-                        pisanie.Write(kod);
-                        kod = "###0";
-                        login = false;
-                        haslo = false;
-                    }
-                    else
-                    {
-                        if (wiadomosc.Equals("###Haslo"))
-                        {
-                            kod = "###2";
-                            pisanie.Write(kod);
-                            kod = "###0";
-                        }
-                    }
+                        WpiszTekst("Serwer", "Uwierzytelnienie nie powiodło się");                    
                 }
                 UstawTekst("Połączenie zostało przerwane");
                 polaczeniaAktywne = false;
@@ -187,7 +158,7 @@ namespace Klient_TS_
 
         private void WpiszTekst(string kto, string wiadomosc)
         {
-            UstawTekst(kto + "napisał: " + wiadomosc);
+            UstawTekst(kto + " napisał: " + wiadomosc);
         }
 
         static byte[] hashuj(String dane)

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GET_GROUP" xml:space="preserve">
-    <value>SELECT Group from Users where Login ={0};</value>
+    <value>SELECT Groups from Users where Login ={0};</value>
     <comment>Pobiera numer grupy na podstawie wpisanego loginu</comment>
   </data>
   <data name="GET_LOGIN" xml:space="preserve">

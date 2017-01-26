@@ -61,32 +61,7 @@ namespace Serwer_TS_
             klient.Close();
             UstawTekst("Zatrzymano pracę serwera");
             polaczeniaAktywne = false;
-        }
-
-        private void login_Click(object sender, EventArgs e)
-        {
-            if (polaczeniaAktywne == true)
-            {
-                pisanie.Write(Text_Login.Text);
-                pisanie.Write("###Login");
-                UstawTekst("Wysłano login");
-            }
-        }
-
-        private void passwd_Click(object sender, EventArgs e)
-        {
-            if (polaczeniaAktywne == true)
-            {
-                //SHA1_Passwd_byte = hashuj(Text_password.Text);
-                //foreach (byte Bajt in SHA1_Passwd_byte)
-                //{
-                //    SHA1_Passwd_string += Bajt.ToString("x");
-                //}
-                //pisanie.Write(SHA1_Passwd_string);
-                pisanie.Write("###Haslo");
-                UstawTekst("Wysłano hasło");
-            }
-        }
+        }        
 
         private void oczekiwanie_na_polaczenie_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -141,10 +116,11 @@ namespace Serwer_TS_
             string user_tmp = "";
             
             /*kody wiadomosci:
-             * 0 - inna wiadomosc, nie wyswietlana
-             * 1 - Uwierzytelnienie powiodło się
-             * 2 - Uwierzytelnienie nie powiodło sie
+             * ###0 - inna wiadomosc, nie wyswietlana
+             * ###1 - Uwierzytelnienie powiodło się
+             * ###2 - Uwierzytelnienie nie powiodło sie
             */
+
             try
             {
                 while((wiadomosc=czytanie.ReadString())!="###BYE###")
@@ -157,12 +133,12 @@ namespace Serwer_TS_
                     if (wiadomosc.Equals(m_oDBConnector.GetPassword(user_tmp)) == true)
                     {
                         haslo = true;
-                    }                   
-
+                    }
                     if ((login == true) && (haslo == true) && (wiadomosc.Equals("###Haslo")))
                     {
                         kod = "###1";
                         pisanie.Write(kod);
+                        UstawTekst("Uwierzytelniono użytkownika z grupy: " + m_oDBConnector.GetGroup(user_tmp));
                         kod = "###0";
                         login = false;
                         haslo = false;
@@ -180,8 +156,6 @@ namespace Serwer_TS_
                 klient.Close();
                 serwer.Stop();
                 UstawTekst("Połączenie zostało przerwane przez klienta");
-                
-
             }
             catch
             {
@@ -194,8 +168,7 @@ namespace Serwer_TS_
         
         private void WpiszTekst(string kto, string wiadomosc)
         {
-            UstawTekst(kto + "napisał: " + wiadomosc);
-            
+            UstawTekst(kto + "napisał: " + wiadomosc);            
         }
 
         private void UstawTekst(string wiadomosc)
@@ -210,9 +183,5 @@ namespace Serwer_TS_
                 this.listBox1.Items.Add(wiadomosc);
             }
         }
-
-        
-
-       
     }
 }
